@@ -1,0 +1,212 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="/static/css/frame.css">
+		<!--菜单css-->
+		<link href="/static/css/jquery-accordion-menu.css" rel="stylesheet" type="text/css" />
+		<link href="/static/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		<!--菜单js-->
+		<script src="/static/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+		<script src="/static/js/jquery-accordion-menu.js" type="text/javascript"></script>
+		<script src="/static/js/menu.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<div id="linerdiv1">
+					<div id="hu1"></div>
+					<div id="hu2"></div>
+					<div id="hu3"></div>
+					<div id="hu4"></div>
+					<div id="hu5"></div>
+					<div id="hu6"></div>
+					<div id="hu7"></div>
+					<div id="hu8"></div>
+					<div id="hu9"></div>
+				</div>	
+				<div id="linerdiv2">
+					<div id="hd1"></div>
+					<div id="hd2"></div>
+					<div id="hd3"></div>
+					<div id="hd4"></div>
+					<div id="hd5"></div>
+					<div id="hd6"></div>
+					<div id="hd7"></div>
+					<div id="hd8"></div>
+					<div id="hd9"></div>
+				</div>
+			</div>
+			
+			<div id="mdiv">
+				<div id="menulist">
+					<div id="jquery-accordion-menu" class="jquery-accordion-menu red">
+						<div class="jquery-accordion-menu-header" id="form">
+							
+						</div>
+							<ul id="demo-list">
+								<li class="active"><a href="#" onclick="fun_a('home')"><i class="fa fa-home"></i>Home</a></li>
+								<li><a href="#" onclick="fun_a('chat')"><i class="fa fa-comments"></i>Chat room</a></li>
+								<li><a href="#" onclick="fun_a('introspection')"><i class="fa fa-cubes"></i>Introspection</a></li>
+								<li><a href="#" onclick="fun_a('treehole')"><i class="fa fa-book"></i>Tree hole</a><span class="jquery-accordion-menu-label">
+									3 </span></li>
+								<li><a href="#"><i class="fa fa-info-circle"></i>Personalise</a>
+									<ul class="submenu">
+										<li><a href="#" onclick="fun_a('UserInfo')"><i class="fa fa-user"></i>User info</a></li>
+										<li><a href="#" onclick="fun_a('FaceID')"><i class="fa fa-qrcode"></i>Face recognition</a></li>
+									</ul>
+								</li>
+								<li><a href="#" onclick="fun_a('about')"><i class="fa fa-users"></i>About</a></li>
+								<li><a href="#" onclick="fun_a('contact')"><i class="fa fa-envelope"></i>Contact </a></li>
+								<li><a href={{url_for('logout')}} ><i class="fa fa-sign-out"></i>Sign-Out</a></li>
+							</ul>
+					</div>
+				</div>
+				
+				<div id="content">
+					<div id="abc">
+						<iframe id="iframePage" src="{{ url_for(p_url)}}" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+					</div>
+					<script type="text/javascript">
+					function fun_a(t){
+						if(t=='home'){
+							document.getElementById('content').style.boxShadow = 'inset 0 0 500px 5px #9a93ff';
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('homepage')}}' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'></iframe>");
+						}
+						if(t=='chat'){
+							document.getElementById('content').style.boxShadow = 'inset 0 0 15px 3px #14a1f9';
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('chatpage')}}' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'></iframe>");
+						}
+						if(t=='introspection'){
+							document.getElementById('content').style.boxShadow = 'inset 0 0 15px 3px #625a58';
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('introspectionpage')}}' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'></iframe>");
+						}
+						if(t=='treehole'){
+							document.getElementById('content').style.boxShadow = 'inset 0 0 15px 3px #ffffff';
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('treeholepage')}}' frameborder='yes' scrolling='yes' allowtransparency='yes'></iframe>");
+						}
+						if(t=='UserInfo'){
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('userinfopage')}}' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'></iframe>");
+						}
+						if(t=='FaceID'){
+							document.getElementById('content').style.boxShadow = 'inset 0 0 15px 3px #14a1f9';
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('faceidpage')}}' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'></iframe>");
+						}
+						if(t=='about'){
+							document.getElementById('content').style.boxShadow = 'inset 0 0 15px 3px #ffffff';
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('aboutpage')}}' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'></iframe>");
+						}
+						if(t=='contact'){
+							document.getElementById('content').style.boxShadow = 'inset 0 0 15px 3px #ffffff';
+						    $('#content').html("<iframe id='iframePage' src='{{ url_for('contactpage')}}' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'></iframe>");
+						}
+
+					}
+				</script>
+				</div>
+			</div>
+			<div id="Foot">
+				Copyright © 2019 - 2020 ComingLeaves,All Rights Reserved
+			</div>
+			
+		</div>
+		
+		<!--menu js-->
+		<script type="text/javascript">
+		(function($) {
+		$.expr[":"].Contains = function(a, i, m) {
+			return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+		};
+		function filterList(header, list) {
+			//@header 头部元素
+			//@list 无需列表
+			//创建一个搜素表单
+			var form = $("<form>").attr({
+				"class":"filterform",
+				action:"#"
+			}), input = $("<input>").attr({
+				"class":"filterinput",
+				type:"text"
+			});
+			$(form).append(input).appendTo(header);
+			$(input).attr('placeholder','快速索引');
+			$(input).attr('type','search');
+			$(input).change(function() {
+				var filter = $(this).val();
+				if (filter) {
+					$matches = $(list).find("a:Contains(" + filter + ")").parent();
+					$("li", list).not($matches).slideUp();
+					$matches.slideDown();
+				} else {
+					$(list).find("li").slideDown();
+				}
+				return false;
+			}).keyup(function() {
+				$(this).change();
+			});
+		}
+		$(function() {
+			filterList($("#form"), $("#demo-list"));
+		});
+		})(jQuery);	
+		</script>
+		
+		<script type="text/javascript">
+		
+			jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
+			
+		</script>
+		<!--header切片图-->
+		<script type="text/javascript">
+		function changebg(){
+			var divl = document.getElementById("menulist");
+			var ran = Math.floor(Math.random()*30);//产生0到30随机数
+			divl.style.backgroundImage = "url('/static/img/menu"+ran+".jpeg')";
+		}
+		
+		var i = 1;
+		function changehbg(){
+			var ran = Math.floor(Math.random()*30);//产生0到30随机数
+			for(i=1;i<=9;i++){
+				var str = ('#hu'+i).toString();
+				$(str).fadeTo('slow', 0.1, function(){
+					$(this).css('background-image', 'url(/static/headimg/hbg' + ran + '.jpg)');
+				}).fadeTo('slow', 1);
+			}
+			for(i=9;i>=1;i--){
+				var str = ('#hd'+i).toString();
+				$(str).fadeTo('slow', 0.2, function(){
+					$(this).css('background-image', 'url(/static/headimg/hbg' + ran + '.jpg)');
+				}).fadeTo('slow', 1);
+			}
+		}
+		setInterval("changehbg()", 50000); //设定定时切换，单位为毫秒，比如：30分钟=1800秒=1800000毫秒
+		setInterval(changebg,20000);
+		</script>
+		
+		<!--背景音乐和它的连续多首播放js-->
+		
+		<div id="audioBox" hidden="hidden"> 
+			<script type="text/javascript"> 
+			window.onload = function(){ 
+			var arr = ["/static/music/张梓义%20-%20久石譲-天空之城（吟唱）（散落%20remix）.mp3","/static/music/和田薫%20-%20慕情%20(M-4).mp3","/static/music/和田薫%20-%20悲運の巫女%20桔梗%20(M-12).mp3","/static/music/和田薫%20-%20哀歌%20(M-5).mp3","/static/music/和田薫%20-%20かごめと犬夜叉%20(M-11+6).mp3","/static/music/Refrain.mp3","/static/music/磯村由紀子%20-%20風の住む街.mp3","/static/music/Bruno%20Wen-li%20-%20ヨスガノソラ%20メインテーマ%20-遠い空へ-.mp3"];               //把需要播放的歌曲从后往前排，这里已添加两首音乐，可继续添加多个音乐
+			var myAudio = new Audio(); 
+			myAudio.preload = true; 
+			myAudio.controls = true; 
+			myAudio.src = arr.pop();         //每次读数组最后一个元素 
+			myAudio.addEventListener('ended', playEndedHandler, false); 
+			myAudio.play(); 
+			document.getElementById("audioBox").appendChild(myAudio); 
+			myAudio.loop = false;//禁止循环，否则无法触发ended事件 
+			function playEndedHandler(){ 
+			myAudio.src = arr.pop(); 
+			myAudio.play(); 
+			console.log(arr.length); 
+			!arr.length && myAudio.removeEventListener('ended',playEndedHandler,false);//只有一个元素时解除绑定 
+			} 
+			}
+			</script> 
+		</div>
+		
+	</body>
+</html>

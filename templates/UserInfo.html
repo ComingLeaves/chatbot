@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="/static/css/UserInfo.css">
+	</head>
+	<body>
+		<div id="container">
+			<p><h3>基本资料</h3></p>
+			</br>
+			<hr >
+			<div id="left">
+				<div id="content">
+					<form action="/detailsPost" method="post">
+						<span><b>昵称</b></span>
+						</br>
+						<input type="text" name="username" class="input" value={{uinfo['username']}} />
+						</br>
+						<span><b>公共邮箱</b></span>
+						</br>
+						<input type="email" name="email" class="input" value={{uinfo['email']}} />
+						</br>
+						<span><b>性别</b></span>
+						</br>
+						<input type="text" name="gender" value={{uinfo['gender']}} />
+						</br>
+						<span><b>出生日期</b></span>
+						</br>
+						<input type="datetime" name="birth" value={{uinfo['birth']}} />&nbsp;&nbsp;格式：xx年/xx月/xx日
+						</br>
+						</br>
+						<input id="fs1" type="submit" value="更新资料"/>
+					</form>
+					</br>
+					</br>
+					<hr>
+					</br>
+					<span><b>聊天文件</b></span>&nbsp;&nbsp;
+					<a href={{url_for('download')}}> <button id="d_btn" type="button"><b>导出</b></button></a>
+				</div>
+
+			</div>
+			<div id="right">
+
+				<span>你的头像：求真像啊</span>
+				<div id="photo" title="260 x 260">
+					<img id="" src={{url_for('static',filename='uh_img/'+uinfo['uid']+'.jpg')}}>
+				</div>
+				<form class="ff" action="/headerupload" method="post" enctype="multipart/form-data">
+					<input type="file"  name="headerpic">
+					</br>
+					<input style="margin-top:5px;" type="submit" value="上传">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

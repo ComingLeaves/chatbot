@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>写诗</title>
+		<style type="text/css">
+			#p_div {
+				line-height: 50px;
+				width: 50%;
+				height: 230px;
+				margin-top: 20px;
+				margin-left: 25%;
+				text-align: center;
+				background-color: #eee;
+			}
+
+			.i1 {
+				width: 300px;
+				height: 40px;
+				margin-top: 20px;
+			}
+			#tip{
+				width: 50%;
+				margin-left: 25%;
+				color: #008cd2;
+				margin-top: 10px;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript">
+			function create() {
+				var words = document.getElementById("words").value;
+				var format = document.getElementById("format").value;
+				var label = $('input:radio[name="acrostic"]:checked').val()
+				var poem = document.getElementById("poem");
+				var tmp = "朗读诗句";
+				//$("#words").val("");
+				//$("#format").val("");
+				$.ajax({
+					type: "POST",
+					url: 'http://127.0.0.1:5010/writePoemPost',
+					data: {
+						'words': words,
+						'format': format,
+						'label': label
+					},
+					dataType: 'json',
+					success: function(data) {
+						//console.log(data);
+						poem_content = data['c_poem'];
+						doTTS("《无题》。作者：李.太不AI。" + poem_content);
+						poem_content = "《无&nbsp;&nbsp;题》&nbsp;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——李·太不AI<br>" +
+							poem_content;
+						poem_content = poem_content.replace(/。/g, "。<br>");
+						poem.innerHTML = poem_content;
+					},
+					error: function(e) {
+						console.log(e);
+					}
+				})
+
+			}
+		</script>
+	</head>
+	<body>
+		<div id="p_div">
+			键入生成诗句的各类信息
+			<br>
+			<form action="#" method="post">
+				<input type="text" name="words" class="i1" id="words" placeholder="藏头字、开头词" /><br>
+				<input type="text" name="format" class="i1" id="format" placeholder="语境与格式" /><br>
+				古诗是否藏头:
+				<label><input name="acrostic" type="radio" value="1" checked="checked" />是 </label>
+				<label><input name="acrostic" type="radio" value="0" />否 </label><br>
+			</form>
+		</div>
+		<div id="tip">
+			提示：<br><hr>
+			·填写藏头词，在下方选择藏头，则生成藏头诗；<br>
+			·选择非藏头，则以开头词开始生成古诗；<br>
+			·语境栏填写格式 "床前明月光，疑是地上霜。"<br>
+			·语境栏可填写5言或七言诗；<br>
+			·生成的诗句语境会参照你填写的诗句语境。<hr>
+		</div>
+
+	</body>
+</html>

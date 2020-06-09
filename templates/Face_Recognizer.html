@@ -1,0 +1,94 @@
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>个人信息获取</title>
+        <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.form/4.2.1/jquery.form.min.js"></script>
+        <script>
+            //判断浏览器是否支持HTML5的Canvas
+            window.onload = function () {
+                try {
+                }
+                catch (e) {
+                }
+            };
+            //获取摄像头的视频流并显示在Video 签中
+            window.addEventListener("DOMContentLoaded", function () {
+                var canvas = document.getElementById("canvas"),
+                    context = canvas.getContext("2d"),
+                    video = document.getElementById("video"),
+                    videoObj = { "video": true },
+                    errBack = function (error) {
+                        console.log("Video capture error: ", error.code);
+                    };
+                //画图与人脸识别
+                setInterval(function () {
+                    context.drawImage(video, 0, 0, 800, 600);
+                    push();
+                },"3000");
+                //30s未识别，自动返回登录注册页面
+                setInterval(function(){
+                    window.location.href= "/";
+                },"30000");
+                if (navigator.getUserMedia) {
+                    navigator.getUserMedia(videoObj, function (stream) {
+                        video.srcObject = stream;
+                        video.play();
+                    }, errBack);
+                } else if (navigator.webkitGetUserMedia) {
+                    navigator.webkitGetUserMedia(videoObj, function (stream) {
+                        video.src = window.webkitURL.createObjectURL(stream);
+                        video.play();
+                    }, errBack);
+                }
+            }, false)
+            function push() {
+                var canvas = document.getElementById("canvas").toDataURL();
+                var info = document.getElementById("info");
+                info.innerHTML = '识别中...';
+                canvas = canvas.split(",")[1]
+                $.ajax({
+                    type: "POST",
+                    url: '/facePost',
+                    data: { 'cs':canvas },
+                    dataType: 'json',
+                    success:function(data){
+                        if(data['data']!='未识别'){
+                            info.innerHTML = '识别成功！';
+                            window.location.href= data['data'];
+                        }
+                    },
+                    error:function(err){
+                        info.innerHTML = '未识别，正在重新识别。。。';
+                    }
+                });
+            }
+
+            function savea1(selector,name){
+                var a = document.createElement('a')
+                a.download = 'pic'
+                a.href = document.getElementById("canvas").toDataURL();
+                a.click();
+            }
+
+
+        </script>
+    </head>
+    <body background={{url_for('static',filename='img/fc-bg.jpg')}}>
+        <div style="width:800px;height:700px;margin-top:50px;margin-left:350px;">
+            <p id="info"  style="color:#bf159f;font-size:20px;">识别中...</p>
+            <form id="form1" method="post" enctype="multipart/form-data">
+                <div id="contentHolder">
+                    <video id="video" width="800" height="600" autoplay></video>
+                    </br>
+                    <canvas style="" id="canvas" width="800" height="600" hidden ></canvas>
+                    </br>
+                    <input type="button" value="识别" id="ok" style="width:100px;height:35px;" onclick="push()" hidden />
+                    <input type="button" value="保存到本地" id="baocun" style="width:100px;height:35px;" onclick="savea1('canvas')" hidden />
+                </div>
+
+            </form>
+        </div>
+
+    </body>
+</html>

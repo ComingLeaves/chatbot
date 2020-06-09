@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+html,body{
+	width: 1264px;
+	height: 556px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#container{
+	width:1264px;
+	height: 556px;
+}
+#d_left{
+	width: 400px;
+	height: 450px;
+	text-align: center;
+	margin: 20px 90px;
+	float: left;
+	box-shadow: 0 4px 10px rgba(0,0,0,.05), 0 0 1px rgba(0,0,0,.1);
+}
+#h_img{
+	width: 200px;
+	height: 147px;
+	margin: 26px 100px;
+	border-radius: 5px;
+	background-image: url(../img/xwh.jpg)
+}
+#pw{
+	width: 35px;
+	height: 35px;
+	border-radius: 17.5px;
+	margin-left: 130px;
+	float: left;
+	background-image: url(../img/wan.jpg);
+}
+#d_right{
+	width: 500px;
+	height: 500px;
+	margin: 20px 40px;
+	color: #575757;
+	float: left;
+}
+#bgc{
+	width: 500px;
+	height: 330px;
+	border-radius: 5px;
+	margin-top: 10px;
+	border: 1px solid #b6b6b6;
+}
+#bg_content{
+	width: 400px;
+	height: auto;
+	margin: 10px 50px;
+	color: #CCCCCC;
+	background-image: linear-gradient(to right bottom, #543215 , #56ff3c);
+	-webkit-background-clip: text;/*按字体裁剪*/
+	-webkit-text-fill-color: transparent;/*设置字体透明*/
+}
+#dt{
+	width: 500px;
+	height: 86px;
+	border-radius: 5px;
+	margin-top: 15px;
+	border: 1px solid #b6b6b6;
+}
+#content{
+	width: 460px;
+	height: 60px;
+	color: #575757;
+	margin-top: 12px;
+	margin-left: 20px;
+}

@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引入 echarts.js -->
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+		<link rel="stylesheet" href="/static/css/Introspection.css">
+		<style type="text/css">
+
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="left">
+				<div id="dl1">
+					<div id="dl2">
+						<div id="chart" style="width: 640px;height: 500px;margin-top: 20px;"></div>
+						<script>
+						    //初始化echarts实例
+						    var myChart=echarts.init(document.getElementById("chart"));
+						    //指定图表的配置项和数据
+						    var option={
+						        //标题
+						        title:{
+						          text:'聊天情感分析'
+						        },
+						        tooltip: {
+            						trigger: 'axis'
+        						},
+						        //工具箱
+						        //保存图片
+						        toolbox:{
+						            show:true,
+						            feature:{
+						                saveAsImage:{
+						                    show:true
+						                }
+						            }
+						        },
+						        //图例-每一条数据的名字叫销量
+						        legend:{
+						            data:['积极程度']
+						        },
+						        //x轴
+						        xAxis:{
+						            data:{{xAxis|tojson}}
+						        },
+						        dataZoom: [{
+								            startValue: ''
+								        }, {
+								            type: 'inside'
+								        }],
+						        //y轴没有显式设置，根据值自动生成y轴
+						        yAxis:{
+						        	splitLine: {
+                						show: false
+            						}
+						        },
+								visualMap: {
+								            top: 5,
+								            right: 5,
+											precision:2,
+								            pieces: [{
+								                gt: 0,
+								                lte: 0.1,
+								                color: '#7e0023'
+								            }, {
+								                gt: 0.1,
+								                lte: 0.2,
+								                color: '#660099'
+								            }, {
+								                gt: 0.2,
+								                lte: 0.4,
+								                color: '#cc0033'
+								            }, {
+								                gt: 0.4,
+								                lte: 0.6,
+								                color: '#ff9933'
+								            }, {
+								                gt: 0.6,
+								                lte: 0.9,
+								                color: '#ffde33'
+								            }, {
+								                gt: 0.9,
+
+								                color: '#096'
+								            }],
+								            outOfRange: {
+								                color: '#999'
+								            }
+								        },
+						        //数据-data是最终要显示的数据
+						        series:[{
+						            name:'积极程度',
+						            type:'line',
+						            data:{{yAxis|tojson}},
+									markLine: {
+									                silent: true,
+									                data: [{
+									                    yAxis: 0.1
+									                }, {
+									                    yAxis: 0.2
+									                }, {
+									                    yAxis: 0.4
+									                }, {
+									                    yAxis: 0.6
+									                },{
+									                    yAxis: 0.9
+									                }]
+									            }
+						        }]
+						    };
+						    //使用刚刚指定的配置项和数据项显示图表
+						    myChart.setOption(option);
+						</script>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="right">
+				<div id="dr1">
+					<div id="dr2" style="background-image: url({{ url_for('static', filename='wordcloudpic/'+uinfo['uid']+'.png') }});">
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

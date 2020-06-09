@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/diary.css"/>
+		<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="container">
+			<div id="div1">
+				<p style="line-height: 30px;">&nbsp;<a href={{url_for('treeholepage')}} ><i class="fa fa-home" style="color:#000000;"></i></a><b> > </b><span>写新日记</span></p>
+				<hr >
+				<br>
+				<form action="/newdiary" method="post">
+					<input type="text" name="d_title" title="标题" value="" placeholder="写个标题吧。。。" />
+					<br>
+					<textarea id="dtext" name="d_content" rows="10" cols="20px" placeholder="写点儿什么呢？生活、工作、学习、恋爱、心情、吐槽、观察、语文、数学、英语... 一句话，留住一段时光 ...
+😄 😊 😃 😉 😍 😘 😚 😳 😁 😌 😜 😝 😒 😏 😓 😔 😞 😖 😥 😰 😨 😣 ..."></textarea>
+					<br>
+					<button type="submit" id="ds"><i class="fa fa-smile"></i>&nbsp;提交&nbsp;<i class="fa fa-angle-right"></i></button>
+				</form>
+
+			</div>
+		</div>
+	</body>
+</html>

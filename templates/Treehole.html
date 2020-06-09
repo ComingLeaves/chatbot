@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="/static/css/treehole.css" rel="stylesheet" type="text/css" />
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	</head>
+	<body onload="show()">
+
+		<ul id='timeline'>
+			<li class='work'>
+				<input class='radio' id='work' name='works' type='radio' checked>
+				<div class="relative">
+					<label for='work'>小暖日记，记录每一天，最好的你</label>
+					<span class='date'>{{rtime}}</span>
+					<span class='circle'></span>
+				</div>
+				<div class='content'>
+					<p>
+						你好朋友，你与{{rtime}}注册了本网站账号，欢迎您！
+						<br>
+						小暖很高心与你相见，这里将会成为你记录每一天所想所感的地方。
+						<br>
+						小暖期待你的生活变得更加美好！
+					</p>
+				</div>
+			</li>
+
+		</ul>
+		<script>
+			function show(){
+				var cd_dates = {{cd_dates|safe}};
+				var d_titles = {{d_titles|safe}};
+				var d_contents = {{d_contents|safe}};
+				var ul = document.getElementById('timeline');
+				for(i=0;i<cd_dates.length;i++)
+				{
+
+					var index = 'work'+i;
+					var li = document.createElement('li');
+					var input = document.createElement('input');
+					var r_div = document.createElement('div');
+					var label = document.createElement('label');
+					var d_span = document.createElement('span');
+					var c_span = document.createElement('span');
+					var c_div = document.createElement('div');
+					var p = document.createElement('p');
+					li.setAttribute('class','work');
+					input.setAttribute('class','radio');
+					input.setAttribute('id',index);
+					input.setAttribute('name','works');
+					input.setAttribute('type','radio');
+					r_div.setAttribute('class','relative');
+					label.setAttribute('for',index);
+					d_span.setAttribute('class','date');
+					c_span.setAttribute('class','circle');
+					c_div.setAttribute('class','content');
+					label.innerHTML = d_titles[i];
+					d_span.innerHTML = cd_dates[i];
+					p.innerHTML = d_contents[i];
+					c_div.appendChild(p);
+					r_div.appendChild(label);
+					r_div.appendChild(d_span);
+					r_div.appendChild(c_span);
+					li.appendChild(input);
+					li.appendChild(r_div);
+					li.appendChild(c_div);
+					ul.appendChild(li);
+
+				}
+			}
+			window.onload = show;
+		</script>
+		<a class="" href={{url_for('writediary')}}>写日记</a>
+	</body>
+</html>

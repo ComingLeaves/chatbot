@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<meta charset="UTF-8">
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<title>小暖酱~的登录界面</title>
+
+<!--css样式-->
+<link rel='stylesheet' href='/static/css/all.min.css'>
+<link rel="stylesheet" href="/static/css/style.css">
+
+<!--字体样式-->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <h2></h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="/registerPost" method="POST">
+			<h1>注册</h1>
+			<div class="social-container">
+				<a href="#" class="social" title="google注册"><i class="fa fa-google-plus"></i></a>
+				<a href="#" class="social" title="QQ注册"><i class="fa fa-qq"></i></a>
+				<a href="#" class="social"title="人脸识别注册"><i class="fa fa-camera"></i></a>
+			</div>
+			<span>第三方账号注册</span>
+			<input type="text" name="username" placeholder="昵称" required="required"/>
+			<input type="email" name="email" placeholder="邮箱" required="required"/>
+			<input type="password" id="pw1" name="password" placeholder="密码" required="required" />
+			<input type="password" id="pw2" name="rpassword" placeholder="重复密码" required="required" onkeyup="KeyUp()" />
+			<button type="submit" id="btn">注册</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/loginPost" method="POST">
+			<h1>登录</h1>
+			<div class="social-container">
+				<a href="#" class="social" title="google登录"><i class="fa fa-google-plus"></i></a>
+				<a href="#" class="social" title="QQ登录"><i class="fa fa-qq"></i></a>
+				<a href="{{url_for('facepage')}}" class="social" title="人脸识别登录"><i class="fa fa-camera"></i></a>
+			</div>
+			<span>第三方账号登录</span>
+			<input type="email" name="email" placeholder="邮箱" required="required"/>
+			<input type="password" name="password" placeholder="密码" required="required"/>
+			<a href="#">忘记密码？</a>
+			<button type="submit">登录</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>欢迎回来！</h1>
+				<p>您或许需要在这儿先登陆一下！</p>
+				<button class="ghost" id="signIn">登录</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>你好，朋友！</h1>
+				<p>输入您的个人信息注册，加入我们。</p>
+				<button class="ghost" id="signUp">注册</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		<h3>欢迎来到小暖注册界面</h3>
+	</p>
+</footer>
+<script  src="/static/js/all.js"></script>
+<script  src="/static/js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

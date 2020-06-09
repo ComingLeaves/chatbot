@@ -1,0 +1,99 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+html,
+body {
+	width: 1264px;
+	height: 556px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-image: url('../img/i-bg.jpg');
+
+}
+
+.container {
+	width: 1264px;
+	height: 556px;
+	background-color: rgba(240, 240, 240, 0.3);
+	padding-top: 1px;
+}
+
+.left {
+	width: 663px;
+	height: 550px;
+	overflow: auto;
+	float: left;
+	margin-top: 3px;
+	margin-left: 15px;
+	background-color: rgba(255, 255, 255, 0.01);
+}
+
+#dl1 {
+	width: 663px;
+	height: 550px;
+	box-sizing: border-box;
+	padding-top: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border-radius: 4px;
+	border: 1px solid #e1e4e8;
+	background-color: rgba(255, 255, 255, 0.3);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, .05), 0 0 1px rgba(0, 0, 0, .1);
+	overflow: auto;
+}
+
+#dl2 {
+	width: 643px;
+	height: 530px;
+	box-sizing: border-box;
+	/*用来让产生的边距和框体占用自己的大小*/
+	margin-top: 8px;
+	margin-left: 8px;
+	/*border: 1px solid #ffcea6;*/
+	background: rgba(255, 255, 255, 0.5);
+	color: white;
+	border-radius: 4px;
+	overflow: auto;
+}
+
+#right{
+	width: 550px;
+	height: 550px;
+	margin-left: 17px;
+	float: left;
+	margin-top: 3px;
+	overflow: auto;
+	background-color: rgba(255,255,255,0.01);
+}
+#dr1{
+	width: 550px;
+	height: 550px;
+	box-sizing: border-box;
+	padding-top: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border-radius:4px;
+	border: 1px solid #e1e4e8;
+	background-color: rgba(255,255,255,0.3);
+	box-shadow: 0 4px 10px rgba(0,0,0,.05), 0 0 1px rgba(0,0,0,.1);
+	overflow: auto;
+}
+#dr2{
+	width: 530px;
+	height: 530px;
+	box-sizing: border-box;/*用来让产生的边距和框体占用自己的大小*/
+	margin-top: 8px;
+	margin-left: 8px;
+	/*border: 1px solid #ffcea6;*/
+	color: white;
+	border-radius:4px;
+	background-color: rgba(255,255,255,0.5);
+	overflow: auto;
+
+}
+

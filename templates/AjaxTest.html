@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text" id="msc" >
+</div>
+    <button onclick="func()">点我</button>
+    <p id="demo"></p>
+    <div id="lis">
+    </div>
+</body>
+<script>
+    function func(){
+    var temp = document.getElementById('msc').value;
+    var str = "123"
+    $.ajax({
+        type: "GET",
+        url: '/testPost',
+        data: { 'msc':temp },
+        dataType: 'json',
+        success: function(data){
+            for(item in data){
+                str = data[item];
+            }
+            alert(str);
+        },
+        error: function(e){
+            alert("error");
+        }
+    })
+
+
+}
+
+</script>
+</html>

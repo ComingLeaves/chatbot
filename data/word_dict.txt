@@ -1,0 +1,4 @@
+__HostName__
+__Weather__
+__Location__
+__RobotName__

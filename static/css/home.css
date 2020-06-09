@@ -1,0 +1,455 @@
+html,body{
+	box-sizing: border-box;
+}
+#container{
+	width: 1264px;
+	height: 556px;
+	background-color: rgba(240,240,240,0.3);
+}
+#d_left{
+	width: 260px;
+	height: 550px;
+	overflow: auto;
+	float: left;
+}
+#ddetail{
+	width: 260px;
+	height: 320px;
+}
+
+#photo{
+	width: 260px;
+	height: 260px;
+	border: 1.5px solid #e1e4e8;
+	overflow: hidden;
+	background:rgba(255,255,255,0.1);
+	box-sizing: border-box;
+}
+#btn_div{
+	width: 260px;
+	height: 30px;
+}
+#btn1{
+	width: 260px;
+	height: 28px;
+	color: #FFFFFF;
+	background-color: #3273dc;
+	border: 0px;
+	outline:none;
+	border-radius: 10px;
+	border-radius: 3px 3px 3px 3px;
+}
+#btn1:hover {
+	background-color: #1cc1f3;
+}
+#btn1:active {
+    background-color: #3273dc;
+}
+#detail{
+	width: 260px;
+	height: 200px;
+	overflow: auto;
+}
+.vcard-names{
+	line-height: 0.5;
+	font-weight: 500;
+	font-size: 30px;
+	text-align:center;
+}
+#log{
+	width: 250px;
+	height: 150px;
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 1.5;
+}
+ul,li{
+	list-style: none;
+	padding-top: 1px;
+	padding-left: 1px;
+}
+
+#d_center{
+	width: 590px;
+	height: 550px;
+	/*border: 1px solid #049372;*/
+	margin-left: 20px;
+	float: left;
+	overflow: auto;
+}
+#timecounter{
+	width: 590px;
+	height: 300px;
+	box-sizing: border-box;
+	padding-top: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border-radius:4px;
+	border: 1px solid #e1e4e8;
+	background-color: white;
+	box-shadow: 0 4px 10px rgba(0,0,0,.05), 0 0 1px rgba(0,0,0,.1);
+	overflow: auto;
+}
+#counter{
+	width: 570px;
+	height: 280px;
+	box-sizing: border-box;/*用来让产生的边距和框体占用自己的大小*/
+	margin-top: 8px;
+	margin-left: 8px;
+	/*border: 1px solid #ffcea6;*/
+	background-image: url(../img/counterbg.png);
+	color: white;
+	border-radius:4px;
+	overflow: auto;
+}
+
+#counter_content{
+	width: 430px;
+	height: 276px;
+	margin-left: 70px;
+	margin-right: 70px;
+}
+.c_counter{
+	font-size: 15px;
+	line-height: 17px;
+}
+.l_div{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 0.3px solid #F0F0F0;
+	clear: both;
+}
+.w_div{
+	width: 430px;
+}
+.w_span{
+	font-size: 12px;
+	line-height: 16px;
+}
+.w1{
+	width: 240px;
+	height: 35px;
+	float: left;
+}
+.w2{
+	width: 165px;
+	height: 35px;
+	margin-left: 25px;
+	float: left;
+}
+#divmsg{
+	width: 590px;
+	height: 220px;
+	margin-top: 20px;
+	padding-left: 1px;
+	padding-right: 1px;
+	box-sizing: border-box;
+	border-radius:4px;
+	border: 1px solid #e1e4e8;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 0 4px 10px rgba(0,0,0,.05), 0 0 1px rgba(0,0,0,.1);
+	overflow: auto;
+}
+#msg{
+	width: 570px;
+	height: 200px;
+	box-sizing: border-box;
+	margin-top: 8px;
+	margin-left: 8px;
+	/*border: 1px solid #ffcea6;*/
+	border-radius:4px;
+	overflow: auto;
+}
+#record{
+	width: 570px;
+	height: 177px;
+	box-sizing: border-box;
+	border: 0.3px solid #000000;
+	text-align: center;
+	overflow:hidden;
+}
+#textbox{
+	width: 530px;
+	height: 110px;
+    margin-top: 3px;
+	margin-left: 20px;
+	overflow:hidden;
+	box-sizing: border-box;
+	border-top: 1px dashed #9fa0aa;
+}
+
+
+.ta{
+	width: 520px;
+	height: 80px;
+	margin-top: 10px;
+	margin-left: 5px;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-style: italic;
+	background-color: rgba(255,255,255,0.01);
+}
+.v{
+	font-size: 13px;
+	line-height: 9px;
+	padding-bottom: 3px;
+}
+.vctrl{
+	width: 520px;
+	height: 19px;
+	margin-left: 5px;
+	text-align: right;
+	/*border: 1px solid #000000;*/
+}
+.vpreview{
+	padding-right: 5px;
+}
+#t_btn{
+	width: 520px;
+	height: 39px;
+	margin-left: 25px;
+	text-align: right;
+}
+#s_btn{
+    width: 60px;
+    height: 30px;
+    border-radius:16px;
+    margin-top: 5px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    background-color:#ebdede;
+    font-size:20px;
+    color: #281aeb;
+    box-sizing: border-box;
+	border: 0px;
+	outline:none;
+}
+#s_btn:hover {
+	background-color: #ebcfcf;
+}
+#s_btn:active {
+  background-color: #ebb6b6;
+}
+#d_right{
+	width: 370px;
+	height: 560px;
+	/*border: 1px solid #049372;*/
+	margin-left: 20px;
+	float: left;
+	overflow: auto;
+}
+#music_box{
+	width: 370px;
+	height: 200px;
+	padding-left: 1px;
+	padding-right: 1px;
+	box-sizing: border-box;
+	border-radius:4px;
+	border: 1px solid #e1e4e8;
+	background-color: white;
+	box-shadow: 0 4px 10px rgba(0,0,0,.05), 0 0 1px rgba(0,0,0,.1);
+	overflow: auto;
+}
+#music_play{
+	width: 350px;
+	height: 180px;
+	box-sizing: border-box;
+	margin-top: 8px;
+	margin-left: 8px;
+	/*border: 1px solid #ffcea6;*/
+	border-radius:4px;
+	overflow: auto;
+}
+#mu{
+	width: 350px;
+	height: 122px;
+	background-image: url(../img/music-card.gif);
+	box-sizing: border-box;
+}
+#ml{
+	width: 50px;
+	height: 120px;
+	margin-left: 15px;
+	box-sizing: border-box;
+	/*border: 1px solid #7167ff;*//*音乐播放器lmr还没写完,先空着*/
+	float: left;
+}
+#mc{
+	width: 150px;
+	height: 120px;
+	margin-left: 35px;
+	box-sizing: border-box;
+	/*border: 1px solid #ffbe55;*/
+	float: left;
+}
+#mr{
+	width: 50px;
+	height: 120px;
+	margin-left: 35px;
+	box-sizing: border-box;
+	/*border: 1px solid #154bff;*/
+	float: left;
+}
+.md{
+	width: 350px;
+	height: 55px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-top: 3px;
+	color: ghostwhite;
+	border-radius: 7px;
+}
+.mdbtn{
+	width: 346px;
+	height: 53px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-top: 1px;
+	background-color: #1d71dca8;
+	color: ghostwhite;
+	border: 1px solid #ffc7b4;
+	border-radius: 7px;
+}
+.mname{
+	margin:0;
+	padding-top:10px;
+	font-size: 25px;
+	font-family: "book antiqua";
+}
+#treehole{
+	width: 370px;
+	height: 320px;
+	padding-left: 1px;
+	padding-right: 1px;
+	margin-top: 20px;
+	box-sizing: border-box;
+	border-radius:4px;
+	border: 1px solid #e1e4e8;
+	background-color: white;
+	box-shadow: 0 4px 10px rgba(0,0,0,.05), 0 0 1px rgba(0,0,0,.1);
+	overflow: auto;
+}
+#artical{
+	width: 350px;
+	height: 302px;
+	box-sizing: border-box;
+	margin-top: 8px;
+	margin-left: 8px;
+	border-radius:4px;
+	overflow: auto;
+}
+
+/*日历css*/
+#artical_calendar{
+	width: 350px;
+	height: 277px;
+	padding-top: 2px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.outerContainer{
+    position: absolute;
+    width: 350px;
+	height: 274px;
+	border-radius:4px;
+	border: 1px solid #CCCCCC;
+    
+}
+.nav{
+    background: #DF3931;
+    color: #ffffff;
+}
+.clearFix:after{
+    content:"";
+    display: block;
+    width: 10px;
+    height: 10px;
+    clear: both;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.navBottom .days{
+    float: left;
+    width: 40px;
+    text-align: center;
+    color: #ede5e5;
+    padding: 1px 5px;
+}
+.left{
+    margin: 13px 7px;
+}
+.left .dateT{
+    margin-right: 1px;
+    display: inline-block;
+    line-height: 13px;
+    font-size: 26px;
+}
+.left .yearTC{
+    display: inline-block;
+}
+.left .yearTC span{
+    line-height: 13px;
+    font-size: 11px;
+}
+.right{
+    margin: 20px 7px;
+    line-height: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 26px;
+}
+.content{
+    background: #ffffff;
+    padding-top: 2px;
+}
+.outerContainer{
+    width: 350px;
+}
+.date input{
+    display: none;
+}
+.date{
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 19px;
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 2px;
+    transition: all .5s ease-in-out;
+}
+.date:hover{
+    background: rgba(204,204,204,0.5);
+    color: #ffffff;
+}
+.date:hover span{
+    color: #ffffff;
+}
+.preMon, .nxtMon{
+    color: #d4d6e0;
+}
+.date.click{
+    background: #df3931;
+    color: #ffffff;
+}
+.date.click span, .date.click.vacation:after{
+    color: #ffffff;
+}
+.vacation:after {
+    content: "休";
+    font-size: 10px;
+    position: absolute;
+    color: #54aa53;
+    right: 8px;
+    top: 0;
+}
+.festival{
+    font-size: 8px;
+    display: block;
+    color: #d4d6e0;
+}
